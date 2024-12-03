@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="login-card ">
+        <div class="container text-center my-5">
+            <form id="signInForm" class="p-5 m-auto w-75 main-shadow" action="#">
+                <h1 class="text-info">Smart Login System</h1>
+                <input type="text" class="form-control my-3" placeholder="Enter your email" name="email" id="emailIn">
+                <input type="password" class="form-control my-3" placeholder="Enter your password" name="pass" id="passIn">
+                <p id="alertLogin"></p>
+                <button id="loginBtn" class="btn btn-outline-info w-100 my-3">Login</button>
+                <p class="text-white"> 
+                    Don’t have an account? 
+                    <a id="goToSignUp" class="text-white" href="#">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="sign-up-card d-none">
+        <div class="container text-center my-5">
+            <form id="signUpForm" class="p-5 main-shadow m-auto w-75 " action="#">
+                <h1 class="text-info">Smart Login System</h1>
+                <input oninput="validationElm(this)" type="text" class="form-control my-3" placeholder="Enter your name" name="name" id="nameUp">
+                <input oninput="validationElm(this)" type="text" class="form-control my-3" placeholder="Enter your email" name="email" id="emailUp">
+                <input oninput="validationElm(this)" type="password" class="form-control my-3" placeholder="Enter your password" name="pass" id="passUp">
+                <p id="succes"></p>
+                <button id="signUpBtn" class="btn btn-outline-info w-100 my-3">Sign Up</button>
+                <p class="text-white"> 
+                    You have an account? 
+                    <a id="goToSignIn" class="text-white" href="#"> Signin</a>
+                </p>
+            </form>
+        </div>
+        <div id="validationInfo"  class="valid-msg d-none d-flex justify-content-center align-items-center start-0 w-100 h-100 bottom-0 bg-black bg-opacity-50 position-absolute">
+            <div class="msg-card bg-white p-4 rounded-2 shadow-lg">
+                <div class="msg-header d-flex justify-content-between align-items-center mb-4">
+                    <div class="circles d-flex">
+                        <span class="rounded-circle circle-1 me-2 "></span>
+                        <span class="rounded-circle circle-2 me-2 "></span>
+                        <span class="rounded-circle circle-3 me-2 "></span>
+                    </div>
+                    <button id="closeValidInfo"  class="btn border-0"><i class="fa-solid fa-xmark fs-4"></i></button>
+                </div>
+                <p >Site Name or Url is not valid, Please follow the rules below :</p>
+                <ol class="rules list-unstyled m-0">
+                    <li><i class="fa-regular fa-circle-right p-2"></i> name: Must have at least 3 alphanumeric characters or underscores.</li>
+                    <li><i class="fa-regular fa-circle-right p-2"></i> email: Must have at least 2 characters before "@" and a domain with 2–7 letters followed by a 2+ letter extension.
+                    </li>
+                    <li><i class="fa-regular fa-circle-right p-2"></i> pass: Must be at least 8 characters long.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="homePage" class="home-page d-none">
+        <nav class="navbar nav-top navbar-expand-lg navbar-dark main-shadow">
+            <div class="container">
+              <a class="navbar-brand" href="#">SMART LOGIN</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="logOut" class="nav-link btn btn-outline-warning " href="#">Logout</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container  text-center vh-100 d-flex align-items-center ">
+            <div class="main-shadow m-auto w-75 p-5">
+                <h1 id="userName" class="username"></h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
